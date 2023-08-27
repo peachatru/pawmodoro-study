@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>'Paw'modoro Clock</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/main.css">
+
+    <!-- Font Awesome -->
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Gloock' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Alexandria' rel='stylesheet'>
+
+    <!-- MDB CSS-->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- MDB JS-->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.js"
+    ></script>
+  </head>    
+    
+  <!-- BODY -->
+  <body onload="startTimeAndDate()"> <!-- When the body loads it'll generate the user's start time and date-->
+   
+    <!-- this section is influenced by: https://mdbootstrap.com/docs/standard/extended/quotes/ Quote #6  -->
+    <!-- We're utilizing the Bootstrap framework to create a responsive layout with flexbox-based positioning -->
+   
+    <!-- This section will have a viewport height of 100 and a light background setting -->
+    <section class="vh-100 bg-light">
+      <!-- This div uses the Bootstrap grid system with the 'container' class.
+        It's vertically padding the container by 5 and then ensuring that the div will take up the full 
+        available height of 100. -->
+      <div class="container py-5 h-100">
+        <!-- This is a Bootstrap row with flexbox classses
+              - d-flex: makes it a flex container
+              - justify-content-center: centers content horizontally  
+              - align-items-center: centers content vertically
+
+              The following classes are used to style the columns in the row:
+        -->
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <!-- Inside the row, it cocupies 5 columns out of the 12 on XL screens -->
+          <div class="col-md-12 col-xl-5">
+
+
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+            <!-- BEGIN CARD CONTENT: date, cat fact, and pomodoro timer -->
+            <div id="factContent" class="card text-white" style="background-color:#000000; border-radius: 15px;">
+              <div class="card-body p-5">
+                <div id="catFactSection">
+                  <!-- START time display -->
+                  <i class="fas fa-paw fa-2x mb-4" aria-hidden="true"></i>
+                  <div id="date"></div>
+                  <div id="display"></div>
+                  <!-- END time display -->
+
+                  <!-- START CAT FACT W/ API -->
+                  <div>
+                      <p></p><p class="lead" id="quote"></p>
+                    
+                  </div>
+                  <!-- END CAT FACT W/ API -->
+  
+                  <!--line break -->
+                  <div id="display"></div> 
+
+                  <!-- Button to generate new fact -->
+                  <!-- Button influenced by Button-34 at: https://getcssscan.com/css-buttons-examples -->
+                  <button id="factButton" class="button-34" onclick="generateNewFact()">New Fact!</button>
+  
+  
+                </div>
+              
+                
+              <!-- START POMODORO TIMER -->
+              <div class="card-body p-5" id="timerSection">
+                <!-- Pomodoro Container -->
+                <div class="pomodoro-container">
+
+                  <!-- Timer -->
+                  <div class="pomodoro-item">
+                      <div id="pomodoro-clock-headers" class="label">'Paw'modoro Timer</div>
+                      <div class="row-pomodoro">
+                          <div id="timeLeft">25:00</div>
+                      </div>
+                  </div>
+
+                  <!-- Time Length -->
+                  <div class="pomodoro-item">
+                      <div class="label"  id="pomodoro-clock-headers">Time Length</div>
+                      <div class="row-pomodoro">
+                          <button id="decreaseTime" class="btn-updown">-</button>
+                          <div id="studyLength" class="row-pomodoro lengthTime">25</div>
+                          <button id="increaseTime" class="btn-updown">+</button>
+                      </div>
+                  </div>
+
+                  <!-- Play/Pause/Reset -->
+                  <div class="pomodoro-item playerButton" id="">
+                      <div class="row-pomodoro buttonRow" >
+                          <button id="startTimerButton" class="btn-controller">
+                              <i id="startFavIcon" class="fas fa-play" aria-hidden="true"></i>
+                          </button>
+                          <button id="refreshTimerButton" class="btn-controller"> 
+                              <i class="fas fa-refresh" aria-hidden="true"></i>
+                          </button>
+                      </div>
+                  </div>
+                </div>
+
+                <!-- Alarm Audio from: https://orangefreesounds.com/gentle-wake-alarm-clock/ -->
+                <audio id="gentleAlarm" src="audio/alarm-gentle.mp3"></audio>
+              </div>
+              <!-- END POMODORO TIMER -->
+
+            </div>
+            <!-- END CARD CONTENT -->
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  <!-- SCRIPTS -->
+  <script src="js/todays-date.js"></script>
+	<script src="js/cat-fact.js"></script>
+  <script src="js/pomodoro.js"></script>
+
+  </body>
+</html>
