@@ -44,7 +44,7 @@
       }
   }
   
-  #quote {
+  #catfact {
     font-weight:bolder; 
   }
 
@@ -69,8 +69,7 @@
 /* START POMODORO CSS */
 
 .pomodoro-container {
-  /* background: black; */
-  background: #a57bb6;
+  background: black;
   line-break: flex;
   flex-flow: row wrap;
   border: 1px solid black;
@@ -131,6 +130,8 @@
   }
 
   #pomodoro-clock-headers {
+    letter-spacing: 0.1em;
+
     font-size: 20px;
     color: white;
     text-transform: uppercase;
