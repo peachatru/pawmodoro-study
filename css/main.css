@@ -1,0 +1,138 @@
+  
+  * {
+    font-family: 'Alexandria', sans-serif;
+  }
+
+  #line-break {
+    border-bottom: solid;
+    margin: 0 0 20px 0; 
+    padding-bottom: 20px;
+  }
+  
+  #date {
+    font-size: 1.0em;
+    font-weight: bolder;
+    letter-spacing: 0.4em;
+  
+  }
+  
+  p {
+    letter-spacing:0.2em;
+    font-size: 2em;
+
+    text-align: left;
+    text-transform: lowercase;
+    font-variant: small-caps;
+  }
+  
+  p :hover {
+    text-decoration: none;
+  }
+  
+  .container {
+    padding-top: 6em;
+    text-align: center;
+  }
+  
+  @media screen 
+   and (max-device-width: 800px) 
+    and (max-device-height: 640px) 
+    and (-webkit-device-pixel-ratio: 2) 
+    and (orientation: portrait) {
+      p {
+        font-size: 1em;
+      }
+  }
+  
+  #quote {
+    font-weight:bolder; 
+  }
+
+  /* <button class="button-34" role="button">Button 34</button> */
+  /* taken from https://getcssscan.com/css-buttons-examples*/
+  .button-34 {
+    border-radius: 999px;
+    color: black;
+    cursor: pointer;
+    font-family: 'Alexandria', sans-serif;
+    font-weight: 700;
+    padding: 8px 18px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: fit-content;
+    border: 0;
+  }
+
+
+
+/* START POMODORO CSS */
+
+.pomodoro-container {
+  /* background: black; */
+  background: #a57bb6;
+  line-break: flex;
+  flex-flow: row wrap;
+  border: 1px solid black;
+  border-radius: 1rem;
+  padding: 20px;
+}
+
+.pomodoro-item {
+  width: 100%;
+}
+
+.row-pomodoro {
+  margin: 8px 0 16px 0;
+  text-align: center;
+}
+
+.playerButton {
+  padding-top: 12px;
+}
+
+.buttonRow {
+  display: flex;
+  justify-content: space-around;
+}
+
+.lengthTime {
+  display: inline-block;
+  padding: 0 20px 0 20px;
+  font-size: 35px;
+}
+.btn-updown {
+  font-size: 2.5rem;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  background: transparent;
+}
+
+.btn-controller {
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  background-color: transparent;
+  color: #fff;
+}
+
+/* Pomodoro item row */
+#timeLeft {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+ /* END POMODORO CSS */
+
+  #timerSection {
+    margin-top: 15%;
+    border-radius: 1rem;
+  }
+
+  #pomodoro-clock-headers {
+    font-size: 20px;
+    color: white;
+    text-transform: uppercase;
+
+  }
