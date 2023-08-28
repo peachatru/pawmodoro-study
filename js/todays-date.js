@@ -1,7 +1,9 @@
 
 //date
 // from https://www.slingacademy.com/article/javascript-display-a-date-object-in-12-hour-format-am-pm/#:~:text=The%20best%20way%20to%20display,using%20the%20toLocaleTimeString()%20method.
-const customFormat = (date) => {
+function getDateAndTime() {
+    let date = new Date();
+
     //get hours, minutes
     let hours = date.getHours();
     let minutes = date.getMinutes();
@@ -23,17 +25,15 @@ const customFormat = (date) => {
   
     // add leading zeros to minutes and seconds using ternnary conditional
     minutes = minutes < 10 ? '0' + minutes : minutes;
-  
-    // combine all parts into a time string
-    const timeString = hours + ':' + minutes + ':' + seconds +  ' ' + amPm;
-  
-    return timeString;
-  };
+    seconds = seconds < 10 ? '0' + seconds : seconds;
 
-function startTimeAndDate() {
-    const date = new Date();
-    var time = customFormat(date);
-    document.getElementById("date").innerHTML = [date.getMonth() + 1] + "/" + date.getDate() + "/" + date.getFullYear();
-    document.getElementById("date").innerHTML += " | " + time;
+     // combine all parts into a time string
+     const timeString = hours + ':' + minutes + ':' + seconds + ' ' + amPm;
+  
+     document.getElementById("date").innerHTML = [date.getMonth() + 1] + "/" + date.getDate() + "/" + date.getFullYear();
+     document.getElementById("date").innerHTML += " | " + timeString;
 
+    //  we'll need to continously call on the function to update the time. 
+     setTimeout("getDateAndTime()", 1000);
 }
+
