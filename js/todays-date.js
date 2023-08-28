@@ -1,5 +1,8 @@
-
-//date
+window.onload = function(){
+    getDateAndTime();
+    console.log('special page is loaded');
+};
+// date
 // from https://www.slingacademy.com/article/javascript-display-a-date-object-in-12-hour-format-am-pm/#:~:text=The%20best%20way%20to%20display,using%20the%20toLocaleTimeString()%20method.
 function getDateAndTime() {
     let date = new Date();
@@ -34,6 +37,10 @@ function getDateAndTime() {
      document.getElementById("date").innerHTML += " | " + timeString;
 
     //  we'll need to continously call on the function to update the time. 
-     setTimeout("getDateAndTime()", 1000);
-}
+    // this will comply for both web browser and chrome extension
+    // adapted from: https://stackoverflow.com/questions/34845225/making-clock-in-chrome-app-settimeout-returns-error
+     setInterval(function(){
+        console.log(getDateAndTime());
+    }, 1000);
 
+}

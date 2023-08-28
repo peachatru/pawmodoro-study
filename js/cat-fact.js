@@ -1,18 +1,27 @@
 const fact = document.getElementById("catfact");
+// taken from: https://stackoverflow.com/questions/13591983/onclick-or-inline-script-isnt-working-in-extension
+document.addEventListener('DOMContentLoaded', function() {
+    var factButton = document.getElementById('factButton');
+    // onClick's logic below:
+    factButton.addEventListener('click', function() {
+        generateNewFact();
+    });
+});
 
 const  generateNewFact = async () =>  
 {
     // START COLOUR GENERATION ////////////////////////////////////////
     var randColour = getRandomBgColor();
     // synching all the colors to the same random hex value
-    $("#catfact").css("color", randColour);
-    $("#factButton").css("background-color", randColour);
-    $("#date").css("color", randColour);
-    $("#timerSection").css("color", randColour);
-    $("#timerSection").css("background-color", randColour);
+    document.getElementById("catfact").style.color = randColour;
+    document.getElementById("factButton").style.backgroundColor = randColour;
+    document.getElementById("date").style.color = randColour;
+    document.getElementById("timerSection").style.color = randColour;
+    document.getElementById("timerSection").style.backgroundColor = randColour;
+
 
     var borderTopCSS = "solid 3px " + randColour; 
-    $(".playerButton").css("border-top", borderTopCSS);
+    document.getElementById("playerButton").style.borderTop = borderTopCSS;
  
     // END COLOUR GENERATION ////////////////////////////////////////////
 
@@ -58,5 +67,3 @@ function getRandomBgColor() {
 generateNewFact();
 
 // ///////////////////////////////////////////////////////////////////////////////////
-
-

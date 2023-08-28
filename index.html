@@ -28,14 +28,14 @@
     />
 
     <!-- MDB JS-->
-    <script
+    <!-- <script
       type="text/javascript"
       src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.js"
-    ></script>
+    ></script> -->
   </head>    
     
   <!-- BODY -->
-  <body onload="getDateAndTime()"> <!-- When the body loads it'll generate the user's start time and date-->
+  <body> <!-- When the body loads it'll generate the user's start time and date-->
    
     <!-- this section is influenced by: https://mdbootstrap.com/docs/standard/extended/quotes/ Quote #6  -->
     <!-- We're utilizing the Bootstrap framework to create a responsive layout with flexbox-based positioning -->
@@ -58,7 +58,7 @@
           <div class="col-md-12 col-xl-5">
 
 
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+            <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
 
             <!-- BEGIN CARD CONTENT: date, cat fact, and pomodoro timer -->
             <div id="factContent" class="card text-white" style="background-color:#000000; border-radius: 15px;">
@@ -82,7 +82,7 @@
 
                   <!-- Button to generate new fact -->
                   <!-- Button influenced by Button-34 at: https://getcssscan.com/css-buttons-examples -->
-                  <button id="factButton" class="button-34" onclick="generateNewFact()">New Fact!</button>
+                  <button id="factButton" class="button-34">New Fact!</button>
   
   
                 </div>
@@ -112,7 +112,7 @@
                   </div>
 
                   <!-- Play/Pause/Reset -->
-                  <div class="pomodoro-item playerButton" id="">
+                  <div class="pomodoro-item playerButton" id="playerButton">
                       <div class="row-pomodoro buttonRow" >
                           <button id="startTimerButton" class="btn-controller">
                               <i id="startFavIcon" class="fas fa-play" aria-hidden="true"></i>

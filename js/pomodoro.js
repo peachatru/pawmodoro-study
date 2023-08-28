@@ -120,7 +120,8 @@ function handleLengthButton(lengthValue, studyLengthHTML, isAddition) {
         startTimerButton.click();
     }  
 
-    return resultSeconds * 60;
+    // return resultSeconds * 60;
+    return timeLength; 
 }
 
 // when the subtraction button is clicked, then we'll have to handle and update the study session accordingly
